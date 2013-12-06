@@ -92,12 +92,12 @@ class ProteinEndToEndRetrievalTests {
         assertThat rows, allOf(
                 contains(
                         allOf(
-                                hasProperty('label', is(ureaTransporterUniProtId)),
+                                hasProperty('label', is(ureaTransporterUniProtId + '_MSDPHSSPLL')),
                                 hasProperty('bioMarker', is(ureaTransporterUniProtId)),
                                 hasProperty('peptide', is(testData.annotations[-1].peptide))
                         ),
-                        hasProperty('label', is(adiponectinUnitProtId)),
-                        hasProperty('label', is(adipogenesisFactorUniProtId))))
+                        hasProperty('label', is(adiponectinUnitProtId + '_MLLLGAVLLL')),
+                        hasProperty('label', is(adipogenesisFactorUniProtId + '_MASKGLQDLK'))))
     }
 
     @Test
@@ -111,7 +111,7 @@ class ProteinEndToEndRetrievalTests {
 
         /* the result is iterable */
         assertThat result, contains(allOf(
-                hasProperty('label', is(ureaTransporterUniProtId)),
+                hasProperty('label', is(ureaTransporterUniProtId + '_MSDPHSSPLL')),
                 contains( /* the rows are iterable */
                         closeTo(testData.data[5].intensity as Double, DELTA),
                         closeTo(testData.data[4].intensity as Double, DELTA),)))
@@ -129,8 +129,8 @@ class ProteinEndToEndRetrievalTests {
                 [ trialConstraint ], [ dataConstraint ], projection)
 
         assertThat result, contains(
-                hasProperty('label', is(ureaTransporterUniProtId)),
-                hasProperty('label', is(adiponectinUnitProtId)))
+                hasProperty('label', is(ureaTransporterUniProtId + '_MSDPHSSPLL')),
+                hasProperty('label', is(adiponectinUnitProtId + '_MLLLGAVLLL')))
     }
 
     @Test
@@ -144,7 +144,7 @@ class ProteinEndToEndRetrievalTests {
                 [ trialConstraint ], [ dataConstraint ], projection)
 
         assertThat result, contains(
-                hasProperty('label', is(adiponectinUnitProtId)))
+                hasProperty('label', is(adiponectinUnitProtId + '_MLLLGAVLLL')))
     }
 
 
