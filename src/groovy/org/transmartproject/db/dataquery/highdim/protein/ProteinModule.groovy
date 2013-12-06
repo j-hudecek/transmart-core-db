@@ -47,7 +47,7 @@ class ProteinModule extends AbstractHighDimensionDataTypeModule {
 
     @Override
     protected List<DataRetrievalParameterFactory> createProjectionFactories() {
-        [ new SimpleRealProjectionFactory('intensity') ]
+        [ new SimpleRealProjectionFactory('zscore') ]
     }
 
     @Override

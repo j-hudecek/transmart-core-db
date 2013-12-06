@@ -18,7 +18,7 @@ class DeSubjectProteinData implements Serializable {
     //BigDecimal meanIntensity
     //BigDecimal stddevIntensity
     //BigDecimal medianIntensity
-    //BigDecimal zscore
+    BigDecimal zscore
     //BigDecimal logIntensity
 
     DeProteinAnnotation jAnnotation
@@ -56,7 +56,7 @@ class DeSubjectProteinData implements Serializable {
         //meanIntensity   nullable: true
         //stddevIntensity nullable: true
         //medianIntensity nullable: true
-        //zscore          nullable: true
+        zscore          nullable: true
         //logIntensity    nullable: true
     }
 }

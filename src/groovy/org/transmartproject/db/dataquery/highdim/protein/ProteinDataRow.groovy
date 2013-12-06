@@ -10,7 +10,7 @@ class ProteinDataRow extends AbstractBioMarkerDataRow {
 
     @Override
     String getLabel() {
-        unitProtId
+        unitProtId + '_' + peptide
     }
 
     @Override
