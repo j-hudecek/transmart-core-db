@@ -97,7 +97,7 @@ class HighDimensionAllDataTests {
         ], [
             'two_region',
             [downChromosome:String, upChromosome: String, id:Long, upEnd:Long, upPos:Long, upStrand:Character, downEnd:Long, downPos:Long, downStrand:Character, isInFrame: Boolean],
-            [:],
+            [allEvents:String],
             TwoRegionTestData
         ], [
             'vcf',

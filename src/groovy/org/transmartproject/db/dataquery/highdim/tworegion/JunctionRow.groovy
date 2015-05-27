@@ -15,6 +15,8 @@ class JunctionRow implements DataRow<AssayColumn, Junction> {
     private final int numAssays
     private final DeTwoRegionJunction junction
 
+    String allEvents
+
     @Override
     String getLabel() {
         "Junction at $junction.upChromosome[$junction.upPos] - " +
@@ -40,6 +42,11 @@ class JunctionRow implements DataRow<AssayColumn, Junction> {
         this.assayIndex = assayIndex
         this.numAssays = numAssays
         this.junction = r
+
+        grails.converters.JSON.use('deep')
+        def converter = r.junctionEvents.collect({it.toNonNullMap()}) as grails.converters.JSON
+
+        allEvents = converter.toString(true)
     }
 
     @Override

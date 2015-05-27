@@ -49,5 +49,22 @@ class DeTwoRegionJunctionEvent implements Serializable, JunctionEvent {
 
         version false
     }
+
+    Map toNonNullMap() {
+        def exportedCols = ['readsSpan',
+                            'readsJunction',
+                            'pairsSpan',
+                            'pairsJunction',
+                            'pairsEnd',
+                            'pairsCounter',
+                            'baseFreq']
+        def ret = [:]
+        exportedCols.each({ ret.put(it,this[it]) })
+        ret.put('event.id', event.id)
+        ret.put('event.cgaType', event.cgaType)
+        ret.put('event.soapClass', event.soapClass)
+        ret.put('event.genes', event.eventGenes.collect({it.geneId}))
+        ret.findAll {it.value != null}
+    }
 }
 

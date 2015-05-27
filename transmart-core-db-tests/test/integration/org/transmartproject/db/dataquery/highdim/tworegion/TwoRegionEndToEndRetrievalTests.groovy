@@ -100,6 +100,8 @@ class TwoRegionEndToEndRetrievalTests {
                         )
                 )
         )
+        assertThat resultList[0].allEvents, containsString('"event.cgaType": "deletion"')
+        assertThat resultList[0].allEvents, containsString('"pairsSpan": 10')
     }
 
     @Test

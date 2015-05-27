@@ -34,7 +34,7 @@ class TwoRegionModule extends AbstractHighDimensionDataTypeModule {
     final Map<String, Class> dataProperties = typesMap(DeTwoRegionJunction,
             ['upChromosome', 'downChromosome', 'id', 'upEnd', 'upPos', 'upStrand', 'downEnd', 'downPos', 'downStrand', 'isInFrame'])
 
-    final Map<String, Class> rowProperties = ImmutableMap.of()
+    final Map<String, Class> rowProperties = [allEvents:''.class]
 
 
     @Autowired

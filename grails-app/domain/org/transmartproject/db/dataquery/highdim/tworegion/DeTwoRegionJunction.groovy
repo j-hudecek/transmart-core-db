@@ -21,6 +21,10 @@ class DeTwoRegionJunction implements Serializable, Junction {
     Boolean isInFrame
     DeSubjectSampleMapping assay
 
+    String getAllEvents() {
+        return null;
+    }
+
     Boolean isInFrame() {
         isInFrame
     }
