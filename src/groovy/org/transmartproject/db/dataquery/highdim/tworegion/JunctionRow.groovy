@@ -46,7 +46,7 @@ class JunctionRow implements DataRow<AssayColumn, Junction> {
         grails.converters.JSON.use('deep')
         def converter = r.junctionEvents.collect({it.toNonNullMap()}) as grails.converters.JSON
 
-        allEvents = converter.toString(true)
+        allEvents = converter.toString(false).replace('\r\n','').replace(' ','')
     }
 
     @Override
